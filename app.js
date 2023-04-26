@@ -3,7 +3,6 @@ const {ApolloServer} = require("apollo-server-express")
 const {typeDefs} =  require("./typeDefs")
 const {resolvers} = require("./resolvers")
 const {connectDb} = require("./db")
-
 const app = express()
 connectDb()
 
