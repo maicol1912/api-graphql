@@ -17,3 +17,7 @@ server.listen().then(({ url }) => {
 });
 
 npm install @graphql-tools/merge
+
+
+const server = new ApolloServer({ typeDefs, resolvers });
+server.applyMiddleware({ app, path: '/graphql' });
