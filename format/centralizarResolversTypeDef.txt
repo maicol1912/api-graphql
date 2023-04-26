@@ -1,0 +1,17 @@
+const { ApolloServer } = require('apollo-server');
+const { mergeTypeDefs, mergeResolvers } = require('@graphql-tools/merge');
+
+const module1TypeDefs = require('./module1/typeDefs');
+const module1Resolvers = require('./module1/resolvers');
+
+const module2TypeDefs = require('./module2/typeDefs');
+const module2Resolvers = require('./module2/resolvers');
+
+const typeDefs = mergeTypeDefs([module1TypeDefs, module2TypeDefs]);
+const resolvers = mergeResolvers([module1Resolvers, module2Resolvers]);
+
+const server = new ApolloServer({ typeDefs, resolvers });
+
+server.listen().then(({ url }) => {
+  console.log(`🚀 Server ready at ${url}`);
+});
