@@ -1,0 +1,45 @@
+//* para vonsultar los titulos del getAllTask que nos devuelve una listya de tasks
+query{
+    getAllTask{
+        id,
+        title,
+        description
+    }
+}
+
+//* estamos llamando la mutacionn de createTask y le enviamos parametros como el titulo y la description
+mutation{
+    createTask(title:"hello world",description:"my new task"){
+        id,
+        title,
+        description
+    }
+}
+
+//* es un query que recibe un id y que selecciona los valores Id, title,description
+query{
+    getTask(id:"644977f4271d6d97d41bad18"){
+        id,
+        title,
+        description
+    }
+}
+
+//* aca no seleccionamos que parte del objeto recibir ya que solo se recibe un string 
+mutation{
+    deleteTask(id:"644977f4271d6d97d41bad18")
+}
+
+//* forma de enviar los datos en forma de objetos 
+mutation{
+    createTask(
+        task:{
+            title:"tarea1",
+            description:"hacer tarea"
+        }
+    ){
+        id,
+        title,
+        description
+    }
+}

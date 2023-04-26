@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "a80b66b7-1401-463b-a4b3-d16ea44c8fd1",
+		"name": "Grapqhql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24860457"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\r\n    createTask(\r\n        task:{\r\n            title:\"tarea1\",\r\n            description:\"hacer tarea\"\r\n        }\r\n    ){\r\n        id,\r\n        title,\r\n        description\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND ALL TASK",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n    getAllTask{\r\n        id,\r\n        title,\r\n        description\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND ONE TASK",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n    getTask(id:\"644977f4271d6d97d41bad18\"){\r\n        id,\r\n        title,\r\n        description\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE TASK",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\r\n    deleteTask(id:\"64497843271d6d97d41bad1b\")\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE TASK",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\r\n    updateTask(\r\n        id:\"64497bec7737afcfe57886ec\",\r\n        task:{\r\n            title:\"mi nueva tarea1\",\r\n        }      \r\n    ){\r\n        id,\r\n        title,\r\n        description\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
